@@ -1,83 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasper Platenburg</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="./style.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
 
-    <script src="./experience.js" defer></script>
-    <script src="./education.js" defer></script>
-    <script src="./projects.js" defer></script>
-    <script src="./localisation.js" defer></script>
-    <script src="./service.js" defer></script>
-    <script src="./settings.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Jasper Platenburg" />
+    <meta name="description" content="Portfolio website" />
+    <meta name="keywords" content="jasper, platenburg, kw1c, software developer" />
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-    <div id="header" class="container-fluid bg-maroon">
-        <div class="container text-center py-5">
-            <img id="headshot" src="./me.jpg"><br>
-            <span class="fs-1 fw-bold">Jasper Platenburg</span><br>
-            <span class="fs-3 fw-bold">Software Developer student</span><br>
+    <div class="container-fluid vh-100">
+        <div class="row vh-100 mh-100">
+            <div id="sidebar" class="col-12 col-md-3 bg-dark text-white sticky-top h-100">
+                <div class="container pt-3">
+                    <div class="text-center">
+                        <img alt="Foto van gezicht" src="assets/headshot.jpg" class="headshot" />
+                        <h1 class="fw-bold mt-4">Jasper Platenburg</h1>
+                        <span class="fs-5">Student Software Developer</span>
+                    </div>
 
-            <div class="btn-group mt-5" role="group">
-                <a href="https://github.com/jxpsert" target="_blank" title="GitHub" class="btn text-white fs-1 mx-2"><i class="bi bi-github"></i><span class="icon-text">GitHub</span></a>
-                <a href="https://www.linkedin.com/in/jasper-platenburg/" target="_blank" title="LinkedIn" class="btn text-white fs-1 mx-2"><i class="bi bi-linkedin"></i><span class="icon-text">LinkedIn</span></a>
-                <a href="mailto:jplatenburg@ptdk.nl" target="_blank" title="E-mail" class="btn text-white fs-1 mx-2"><i class="bi bi-envelope-at-fill"></i><span class="icon-text">E-mail</span></a>
-                <a href="https://blog.ptdk.nl" target="_blank" title="Blog" class="btn text-white fs-1 mx-2"><i class="bi bi-newspaper"></i><span class="icon-text">Blog</span></a>
+                    <div class="px-2 mt-5 m-auto">
+                        <ul class="list-unstyled fs-5">
+                            <li>
+                                <i class="bi bi-cake2"></i> april 2005
+                            </li>
+                            <li>
+                                <i class="bi bi-house"></i> Nijmegen, Netherlands
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope-at"></i>
+                                <a href="mailto:jasper@ptdk.nl" class="link-light">
+                                    jasper@ptdk.nl
+                                </a>
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone"></i>
+                                <a href="tel:+31623348023" class="link-light">
+                                    +31 6 23 34 80 23
+                                </a>
+                            </li>
+
+                            <li class="mt-4">
+                                <i class="bi bi-github"></i>
+                                <a href="https://github.com/jxpsert" class="link-light" target="_blank">
+                                    GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <i class="bi bi-linkedin"></i>
+                                <a href="https://linkedin.com/in/jasper-platenburg" class="link-light" target="_blank">
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <i class="bi bi-newspaper"></i>
+                                <a href="https://blog.ptdk.nl" class="link-light" target="_blank">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content" class="col-12 col-md-9 ms-auto bg-white">
+                <div class="container py-5">
+                    <div class="row row-cols-1 row-cols-md-2 mb-2">
+                        <div class="col">
+                            <section id="work-experience">
+                                <h2>Werkervaring</h2>
+                                <ul class="list-unstyled timeline">
+                                    <li class="timeline-point current">
+                                        <span>februari 2024 - nu</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/wux-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">Stagiair Software Developer</span><br />
+                                                    <span class="fs-6">Wux &centerdot; Cuijk, Nederland</span>
+                                                    <ul class="horizontal fst-italic">
+                                                        <li>PHP</li>
+                                                        <li>Laravel</li>
+                                                        <li>HTML</li>
+                                                        <li>CSS</li>
+                                                        <li>JavaScript</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-point current">
+                                        <span>april 2023 - nu</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/hc-support-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">Operator VMC</span><br />
+                                                    <span class="fs-6">HC Support &centerdot; Nijmegen,
+                                                        Nederland</span>
+                                                    <ul class="horizontal fst-italic">
+                                                        <li>Microsoft Office</li>
+                                                        <li>Klantenservice</li>
+                                                        <li>Topdesk</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-point">
+                                        <span>oktober 2021 - januari 2023</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/ah-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">Sales employee</span><br />
+                                                    <span class="fs-6">Albert Heijn &centerdot; Nijmegen,
+                                                        Nederland</span>
+                                                    <ul class="horizontal fst-italic">
+                                                        <li>Klantenservice</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-point">
+                                        <span>juni 2021 - oktober 2021</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/nyp-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">Fietsbezorger</span><br />
+                                                    <span class="fs-6">New York Pizza &centerdot; Nijmegen,
+                                                        Nederland</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="col">
+                            <section id="education">
+                                <h2>Opleiding</h2>
+                                <ul class="list-unstyled timeline">
+                                    <li class="timeline-point current">
+                                        <span>september 2023 - nu</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/kw1c-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">MBO4 Software Developer</span><br />
+                                                    <span class="fs-6">Koning Willem I College &centerdot;
+                                                        's-Hertogenbosch,
+                                                        Nederland</span>
+                                                    <ul class="horizontal fst-italic">
+                                                        <li>Microsoft Office</li>
+                                                        <li>SQL</li>
+                                                        <li>C#</li>
+                                                        <li>HTML</li>
+                                                        <li>CSS</li>
+                                                        <li>PHP</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-point">
+                                        <span>augustus 2021 - maart 2023</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/han-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">Bachelor HBO-ICT
+                                                        (niet afgemaakt)</span><br />
+                                                    <span class="fs-6">Hogeschool van Arnhem en Nijmegen &centerdot;
+                                                        Nijmegen,
+                                                        Nederland</span>
+                                                    <ul class="horizontal fst-italic">
+                                                        <li>Microsoft Office</li>
+                                                        <li>Java</li>
+                                                        <li>HTML</li>
+                                                        <li>CSS</li>
+                                                        <li>PHP</li>
+                                                        <li>SQL</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-point">
+                                        <span>augustus 2016 - juni 2021</span>
+                                        <div class="experience-card">
+                                            <div class="row">
+                                                <div class="col-2 my-auto">
+                                                    <img alt="Bedrijfslogo" src="assets/logos/aloysius-logo.png"
+                                                        class="experience-card-logo" />
+                                                </div>
+                                                <div class="col">
+                                                    <span class="fs-4 fw-bold">HAVO (Economie &
+                                                        Maatschappij)</span><br />
+                                                    <span class="fs-6">Aloysius Park Neerbosch &centerdot;
+                                                        Nijmegen,
+                                                        Nederland</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+
+                    <section id="projects">
+                        <h2>Projecten</h2>
+                        <h3 class="ms-4">Persoonlijk</h3>
+                        <div class="row row-cols-1 row-cols-md-2 g-3 ps-4">
+                            <div class="col">
+                                <div class="experience-card">
+                                    <span class="fs-4 fw-bold">OpenAED</span>
+                                    <img class="img-fluid project-image mb-2" src="assets/images/project-openaed.png" />
+
+                                    <a href="https://github.com/openaed"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-github"></i> GitHub
+                                    </a>
+                                    &centerdot;
+                                    <a href="https://openaed.nl"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-globe"></i> Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="experience-card">
+                                    <span class="fs-4 fw-bold">Mankementjes</span>
+                                    <img class="img-fluid project-image mb-2"
+                                        src="assets/images/project-mankementjes.png" />
+
+                                    <a href="https://github.com/potato-donkey/mankementjes"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-github"></i> GitHub
+                                    </a>
+                                    &centerdot;
+                                    <a href="https://mankementjes.nl"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-globe"></i> Website
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="experience-card">
+                                    <span class="fs-4 fw-bold">Bapycara</span>
+                                    <img class="img-fluid project-image mb-2"
+                                        src="assets/images/project-bapycara.png" />
+
+                                    <a href="https://github.com/potato-donkey/bapycara"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-github"></i> GitHub
+                                    </a>
+                                    &centerdot;
+                                    <a href="https://bapycara.eu"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-globe"></i> Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="experience-card">
+                                    <span class="fs-4 fw-bold">AED Stichting Dukenburg</span>
+                                    <img class="img-fluid project-image mb-2"
+                                        src="assets/images/project-aeddukenburg.png" />
+
+                                    <a href="https://github.com/potato-donkey/aeddukenburg"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-github"></i> GitHub
+                                    </a>
+                                    &centerdot;
+                                    <a href="https://ptdk.nl/aeddukenburg"
+                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
+                                        target="_blank">
+                                        <i class="bi bi-globe"></i> Website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="experience-card">
+                                    <span class="fs-4 fw-bold">Beheersysteem TechnoPromo</span>
+                                    <img class="img-fluid project-image mb-2"
+                                        src="assets/images/project-technopromo.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container pt-5 w-75" id="content">
-        <span id="lang_en" onclick="english();" class="lang"><img src="/assets/flag_uk_16.png"> English</span> / <span id="lang_nl" class="lang link" onclick="dutch();"><img src="/assets/flag_nl_16.png"> Nederlands</span>
-        <section id="personal">
-            <h1>Persoonlijke informatie</h1>
-            <span class="fs-2 fw-bold">Hi there!</span>
-            <p class="fs-6">
-
-                <h5 id="contact">Contact</h5>
-                <span class="contact"></span>
-            </p>
-        </section>
-
-        <section id="work">
-            <h1>Werkervaring</h1>
-
-            <ul id="worklist">
-
-            </ul>
-        </section>
-
-        <section id="edu">
-            <h1>Opleiding</h1>
-
-            <ul id="edulist">
-
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h1>Projecten</h1>
-
-            <ul id="projlist" class="cols-3">
-
-            </ul>
-        </section>
-
-        <section id="services">
-            <h1>Diensten</h1>
-
-            <div id="services-grid" class="grid">
-
-            </div>
-
-            <span id="interestedSpan">Geïnteresseerd?</span> <a href="#contact">Contact</a>
-        </section>
     </div>
 </body>
 
