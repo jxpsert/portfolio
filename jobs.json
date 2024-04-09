@@ -1,0 +1,61 @@
+{
+    "jobs": [
+        {
+            "start": "februari 2024",
+            "end": null,
+            "company": "Wux",
+            "company_logo": "./assets/logos/wux-logo.png",
+            "title": "Software Developer",
+            "description": "Stage als back-end developer.",
+            "city": "Cuijk",
+            "country": "Nederland",
+            "skills": [
+                "PHP",
+                "Laravel",
+                "MySQL",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        {
+            "start": "april 2023",
+            "end": null,
+            "company": "HC Support",
+            "company_logo": "./assets/logos/hc-support-logo.png",
+            "title": "Operator VMC",
+            "description": "Operator in de Verkeersmanagementcentrale van de gemeente Nijmegen.",
+            "city": "Nijmegen",
+            "country": "Nederland",
+            "skills": [
+                "Microsoft Office",
+                "Klantenservice",
+                "Topdesk"
+            ]
+        },
+        {
+            "start": "oktober 2021",
+            "end": "januari 2023",
+            "company": "Albert Heijn",
+            "company_logo": "./assets/logos/ah-logo.png",
+            "title": "Verkoopmedewerker",
+            "description": "Verkoopmedewerker bij Albert Heijn XL Nijmegen.",
+            "city": "Nijmegen",
+            "country": "Nederland",
+            "skills": [
+                "Klantenservice"
+            ]
+        },
+        {
+            "start": "juni 2021",
+            "end": "oktober 2021",
+            "company": "New York Pizza",
+            "company_logo": "./assets/logos/nyp-logo.png",
+            "title": "Fietsbezorger",
+            "description": "Fietsbezorger bij New York Pizza Nijmegen Leuvensbroek.",
+            "city": "Nijmegen",
+            "country": "Nederland",
+            "skills": []
+        }
+    ]
+}

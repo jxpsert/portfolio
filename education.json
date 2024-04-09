@@ -1,0 +1,51 @@
+{
+    "education": [
+        {
+            "start": "september 2023",
+            "end": null,
+            "school": "Koning Willem I College",
+            "school_logo": "./assets/logos/kw1c-logo.png",
+            "degree": "MBO 4",
+            "title": "Software Developer",
+            "city": "'s-Hertogenbosch",
+            "country": "Nederland",
+            "skills": [
+                "Microsoft Office",
+                "HTML",
+                "CSS",
+                "C#",
+                "PHP",
+                "SQL"
+            ]
+        },
+        {
+            "start": "augustus 2021",
+            "end": "maart 2023",
+            "school": "Hogeschool van Arnhem en Nijmegen",
+            "school_logo": "./assets/logos/han-logo.png",
+            "degree": "Bachelor",
+            "title": "HBO-ICT",
+            "city": "Nijmegen",
+            "country": "Nederland",
+            "skills": [
+                "Microsoft Office",
+                "HTML",
+                "CSS",
+                "Java",
+                "PHP",
+                "SQL"
+            ]
+        },
+        {
+            "start": "augustus 2016",
+            "end": "juni 2021",
+            "school": "Aloysius Park Neerbosch",
+            "school_logo": "./assets/logos/aloysius-logo.png",
+            "degree": "HAVO",
+            "title": "Economie & Maatschappij",
+            "city": "Nijmegen",
+            "country": "Nederland",
+            "skills": []
+        }
+    ]
+}
