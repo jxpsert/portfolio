@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="nl-NL">
 
 <head>
     <title>Jasper Platenburg</title>
@@ -244,91 +244,7 @@
 
                     <section id="projects">
                         <h2>Projecten</h2>
-                        <h3 class="ms-4">Persoonlijk</h3>
-                        <div class="row row-cols-1 row-cols-md-2 g-3 ps-4">
-                            <div class="col">
-                                <div class="experience-card">
-                                    <span class="fs-4 fw-bold">OpenAED</span>
-                                    <img class="img-fluid project-image mb-2" src="assets/images/project-openaed.png" />
-
-                                    <a href="https://github.com/openaed"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-github"></i> GitHub
-                                    </a>
-                                    &centerdot;
-                                    <a href="https://openaed.nl"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-globe"></i> Website
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="experience-card">
-                                    <span class="fs-4 fw-bold">Mankementjes</span>
-                                    <img class="img-fluid project-image mb-2"
-                                        src="assets/images/project-mankementjes.png" />
-
-                                    <a href="https://github.com/potato-donkey/mankementjes"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-github"></i> GitHub
-                                    </a>
-                                    &centerdot;
-                                    <a href="https://mankementjes.nl"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-globe"></i> Website
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="experience-card">
-                                    <span class="fs-4 fw-bold">Bapycara</span>
-                                    <img class="img-fluid project-image mb-2"
-                                        src="assets/images/project-bapycara.png" />
-
-                                    <a href="https://github.com/potato-donkey/bapycara"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-github"></i> GitHub
-                                    </a>
-                                    &centerdot;
-                                    <a href="https://bapycara.eu"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-globe"></i> Website
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="experience-card">
-                                    <span class="fs-4 fw-bold">AED Stichting Dukenburg</span>
-                                    <img class="img-fluid project-image mb-2"
-                                        src="assets/images/project-aeddukenburg.png" />
-
-                                    <a href="https://github.com/potato-donkey/aeddukenburg"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-github"></i> GitHub
-                                    </a>
-                                    &centerdot;
-                                    <a href="https://potato-donkey.github.io/aeddukenburg/"
-                                        class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"
-                                        target="_blank">
-                                        <i class="bi bi-globe"></i> Website
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="experience-card">
-                                    <span class="fs-4 fw-bold">Beheersysteem TechnoPromo <small class="text-muted fs-6">stageopdracht</small></span>
-                                    <img class="img-fluid project-image mb-2"
-                                        src="assets/images/project-technopromo.png" />
-                                </div>
-                            </div>
+                        <div class="row row-cols-1 row-cols-md-3 g-3 ps-4" id="projectsContainer">
                         </div>
                     </section>
                 </div>
@@ -336,5 +252,38 @@
         </div>
     </div>
 </body>
+
+<script>
+    const projectsContainer = document.getElementById("projectsContainer");
+
+    fetch("projects.json")
+        .then(response => response.json())
+        .then(data => {
+            data.projects.forEach(project => {
+                const projectCard = document.createElement("div");
+                projectCard.classList.add("col");
+                let html = "";
+                html += `<div class="experience-card">`;
+                html += `<span class="fs-4 fw-bold">${project.title}</span>`;
+                if (project.subtitle)
+                    html += `&nbsp;<span class="text-muted fs-6">${project.subtitle}</span>`;
+
+                html += `<a href="./project.html?id=${project.id}">`;
+                html += `<img class="img-fluid project-image mb-2" src="${project.image}" />`;
+                html += `</a>`;
+
+                if (project.github)
+                    html += `<a href="${project.github}" class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover" target="_blank"><i class="bi bi-github"></i> GitHub</a>`;
+                if (project.url && project.github)
+                    html += `&nbsp;&centerdot;&nbsp;`;
+                if (project.url)
+                    html += `<a href="${project.url}" class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover" target="_blank"><i class="bi bi-globe"></i> Website</a>`;
+
+                html += `</div>`;
+                projectCard.innerHTML = html;
+                projectsContainer.appendChild(projectCard);
+            });
+        });
+</script>
 
 </html>

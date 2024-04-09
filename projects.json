@@ -1,0 +1,49 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "OpenAED",
+            "subtitle": null,
+            "description": "OpenAED is een open-source kaart met AED's in Nederland. De kaart is gemaakt door vrijwilligers en is gratis te gebruiken.",
+            "url": "https://openaed.nl",
+            "image": "assets/images/project-openaed.png",
+            "github": "https://github.com/openaed"
+        },
+        {
+            "id": 2,
+            "title": "Mankementjes",
+            "subtitle": null,
+            "description": "Mankementjes is een open-source overzicht van kapotte attracties in pretparken.",
+            "url": null,
+            "image": "assets/images/project-mankementjes.png",
+            "github": "https://github.com/potato-donkey/mankementjes"
+        },
+        {
+            "id": 3,
+            "title": "Bapycara",
+            "subtitle": null,
+            "description": "Bapycara is een website over de capybara.",
+            "url": "https://bapycara.eu",
+            "image": "assets/images/project-bapycara.png",
+            "github": "https://github.com/potato-donkey/bapycara"
+        },
+        {
+            "id": 4,
+            "title": "Stichting AED Dukenburg",
+            "subtitle": null,
+            "description": "Stichting AED Dukenburg is een stichting die zich inzet voor het plaatsen van AED's in de wijk Dukenburg in Nijmegen. Op eigen houtje ben ik hun website gaan herontwerpen.",
+            "url": "https://potato-donkey.github.io/aeddukenburg/",
+            "image": "assets/images/project-aeddukenburg.png",
+            "github": "https://github.com/potato-donkey/aeddukenburg"
+        },
+        {
+            "id": 5,
+            "title": "Beheersysteem TechnoPromo",
+            "subtitle": "stageopdracht",
+            "description": "Tijdens mijn stage bij Wux heb ik een beheersysteem gemaakt voor de stichting TechnoPromo.",
+            "url": null,
+            "image": "assets/images/project-technopromo.png",
+            "github": null
+        }
+    ]
+}

@@ -20,6 +20,23 @@ b {
     font-family: 'Ubuntu Bold';
 }
 
+.link-underline-none {
+    text-decoration: none;
+}
+
+.project-image-container {
+    height: 90%;
+    /* Adjust this value to your desired height */
+    overflow: hidden;
+    /* Ensures the image does not overflow its container */
+}
+
+.project-image-container img {
+    width: 100%;
+    height: auto;
+    /* Ensures the image maintains its aspect ratio */
+}
+
 img.headshot {
     border-radius: 50%;
     width: 50%;
