@@ -107,6 +107,7 @@
     fetch("projects.json")
         .then(response => response.json())
         .then(data => {
+            data.projects.sort(() => Math.random() - 0.5); // diversity
             data.projects.forEach(project => {
                 const projectCard = document.createElement("div");
                 projectCard.classList.add("col");
