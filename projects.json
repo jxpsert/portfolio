@@ -4,46 +4,68 @@
             "id": 1,
             "title": "OpenAED",
             "subtitle": null,
-            "description": "OpenAED is een open-source kaart met AED's in Nederland. De kaart is gemaakt door vrijwilligers en is gratis te gebruiken.",
+            "description": "OpenAED is een open-source kaart met AED's in Nederland. De kaart wordt onderhouden door vrijwilligers door heel Nederland en de data is gratis te gebruiken.",
             "url": "https://openaed.nl",
             "image": "assets/images/project-openaed.png",
-            "github": "https://github.com/openaed"
+            "github": "https://github.com/openaed",
+            "tech": [
+                "Laravel",
+                "MySQL",
+                "JavaScript"
+            ]
         },
         {
             "id": 2,
             "title": "Mankementjes",
             "subtitle": null,
-            "description": "Mankementjes is een open-source overzicht van kapotte attracties in pretparken.",
+            "description": "Mankementjes is een open-source overzicht van kapotte attracties in pretparken. Dit was mijn eerste interactie met Laravel, en was vooral een oefenproject om te kijken wat Laravel te bieden heeft.",
             "url": null,
             "image": "assets/images/project-mankementjes.png",
-            "github": "https://github.com/potato-donkey/mankementjes"
+            "github": "https://github.com/potato-donkey/mankementjes",
+            "tech": [
+                "Laravel",
+                "MySQL"
+            ]
         },
         {
             "id": 3,
             "title": "Bapycara",
             "subtitle": null,
-            "description": "Bapycara is een website over de capybara.",
+            "description": "Bapycara is een website met informatie over de capybara.",
             "url": "https://bapycara.eu",
             "image": "assets/images/project-bapycara.png",
-            "github": "https://github.com/potato-donkey/bapycara"
+            "github": "https://github.com/potato-donkey/bapycara",
+            "tech": [
+                "HTML",
+                "CSS"
+            ]
         },
         {
             "id": 4,
             "title": "Stichting AED Dukenburg",
             "subtitle": null,
-            "description": "Stichting AED Dukenburg is een stichting die zich inzet voor het plaatsen van AED's in de wijk Dukenburg in Nijmegen. Op eigen houtje ben ik hun website gaan herontwerpen.",
+            "description": "Stichting AED Dukenburg is een stichting die zich inzet voor het plaatsen van AED's in de wijk Dukenburg in Nijmegen. Op eigen houtje ben ik hun website gaan herontwerpen.\\n\\n**Let op: deze website is niet in opdracht van de stichting gemaakt, en wordt niet gebruikt.**",
             "url": "https://potato-donkey.github.io/aeddukenburg/",
             "image": "assets/images/project-aeddukenburg.png",
-            "github": "https://github.com/potato-donkey/aeddukenburg"
+            "github": "https://github.com/potato-donkey/aeddukenburg",
+            "tech": [
+                "HTML",
+                "CSS"
+            ]
         },
         {
             "id": 5,
             "title": "Beheersysteem TechnoPromo",
             "subtitle": "stageopdracht",
-            "description": "Tijdens mijn stage bij Wux heb ik een beheersysteem gemaakt voor de stichting TechnoPromo.",
+            "description": "Tijdens mijn stage bij [Wux](https://wux.nl) heb ik een beheersysteem gemaakt voor de stichting TechnoPromo. Hierin kunnen zij onder andere beheren welke scholen wanneer langskomen, wat zij gaan doen en wat er ingekocht moet worden.",
             "url": null,
             "image": "assets/images/project-technopromo.png",
-            "github": null
+            "github": null,
+            "tech": [
+                "Laravel",
+                "MySQL",
+                "JavaScript"
+            ]
         }
     ]
 }

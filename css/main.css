@@ -50,6 +50,7 @@ ul.horizontal {
 ul.horizontal>li {
     display: inline;
     display: inline-block;
+    margin-right: 0.25em;
 }
 
 ul.horizontal>li:not(:first-child)::before {
