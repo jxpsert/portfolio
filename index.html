@@ -94,7 +94,7 @@
 
                     <section id="projects">
                         <h2>Projecten</h2>
-                        <div class="row row-cols-1 row-cols-md-3 g-3 ps-4" id="projectsContainer">
+                        <div class="row row-cols-1 row-cols-md-3 g-3 ps-md-4" id="projectsContainer">
                         </div>
                     </section>
                 </div>
@@ -153,7 +153,7 @@
                 html += `<span>${job.start} - ${job.end ? job.end : "nu"}</span>`;
                 html += `<div class="experience-card">`;
                 html += `<div class="row">`;
-                html += `<div class="col-2 my-auto">`;
+                html += `<div class="col-12 col-md-2 my-auto">`;
                 if (job.company_url)
                     html += `<a href="${job.company_url}" target="_blank" class="image-link" title="naar ${job.company}">`;
                 html += `<img alt="Bedrijfslogo" src="${job.company_logo}" class="experience-card-logo" />`;
@@ -163,7 +163,7 @@
                 html += `<div class="col">`;
                 html += `<span class="fs-4 fw-bold">${job.title}</span><br />`;
                 html += `<span class="fs-6">${job.company} &centerdot; ${job.city}, ${job.country}</span>`;
-                html += `<ul class="horizontal fst-italic">`;
+                html += `<ul class="horizontal fst-italic skills-list">`;
                 job.skills.forEach(skill => {
                     html += `<li>${skill}</li>`;
                 });
@@ -194,7 +194,7 @@
                 html += `<span>${education.start} - ${education.end ? education.end : "nu"}</span>`;
                 html += `<div class="experience-card">`;
                 html += `<div class="row">`;
-                html += `<div class="col-2 my-auto">`;
+                html += `<div class="col-12 col-md-2 my-auto">`;
                 if (education.school_url)
                     html += `<a href="${education.school_url}" target="_blank" class="image-link" title="naar ${education.school}">`;
                 html += `<img alt="Bedrijfslogo" src="${education.school_logo}" class="experience-card-logo" />`;
@@ -204,7 +204,7 @@
                 html += `<div class="col">`;
                 html += `<span class="fs-4 fw-bold">${education.degree} ${education.title}</span><br />`;
                 html += `<span class="fs-6">${education.school} &centerdot; ${education.city}, ${education.country}</span>`;
-                html += `<ul class="horizontal fst-italic">`;
+                html += `<ul class="horizontal fst-italic skills-list">`;
                 education.skills.forEach(skill => {
                     html += `<li>${skill}</li>`;
                 });

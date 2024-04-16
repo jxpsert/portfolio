@@ -137,3 +137,21 @@ ul.horizontal>li:not(:first-child)::before {
         z-index: 1030
     }
 }
+
+@media only screen and (max-width: 700px) {
+    .skills-list>li {
+        font-size: 0.8em;
+    }
+
+    .col-mobile-12 {
+        width: 100%;
+    }
+
+    .experience-card-logo {
+        max-width: 20vw;
+    }
+
+    #project-image {
+        margin-bottom: 1em;
+    }
+}
