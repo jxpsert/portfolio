@@ -60,7 +60,7 @@ ul.horizontal>li {
 }
 
 ul.horizontal>li:not(:first-child)::before {
-    content: "‧ ";
+    content: "· ";
 }
 
 .image-link>img {
