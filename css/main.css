@@ -57,11 +57,11 @@ ul.horizontal>li:not(:first-child)::before {
     content: "‧ ";
 }
 
-.company-logo {
-    transition: filter 0.3s;
+.image-link>img {
+    transition: 0.3s;
 }
 
-.company-logo:hover>img {
+.image-link:hover>img {
     padding: 0.25em;
 }
 

@@ -153,7 +153,7 @@
                 html += `<div class="row">`;
                 html += `<div class="col-2 my-auto">`;
                 if (job.company_url)
-                    html += `<a href="${job.company_url}" target="_blank" class="company-logo" title="naar ${job.company}">`;
+                    html += `<a href="${job.company_url}" target="_blank" class="image-link" title="naar ${job.company}">`;
                 html += `<img alt="Bedrijfslogo" src="${job.company_logo}" class="experience-card-logo" />`;
                 if (job.company_url)
                     html += `</a>`;
@@ -194,7 +194,7 @@
                 html += `<div class="row">`;
                 html += `<div class="col-2 my-auto">`;
                 if (education.school_url)
-                    html += `<a href="${education.school_url}" target="_blank" class="company-logo" title="naar ${education.school}">`;
+                    html += `<a href="${education.school_url}" target="_blank" class="image-link" title="naar ${education.school}">`;
                 html += `<img alt="Bedrijfslogo" src="${education.school_logo}" class="experience-card-logo" />`;
                 if (education.school_url)
                     html += `</a>`;
