@@ -4,14 +4,14 @@
 <head>
     <title>Jasper Platenburg</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Jasper Platenburg" />
-    <meta name="description" content="Portfolio website" />
-    <meta name="keywords" content="jasper, platenburg, kw1c, software developer" />
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jasper Platenburg">
+    <meta name="description" content="Portfolio website">
+    <meta name="keywords" content="jasper, platenburg, kw1c, software developer">
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
@@ -30,7 +30,8 @@
                 <ul id="project-technologies" class="horizontal"></ul>
             </div>
             <div class="col-8">
-                <img id="project-image" src="" alt="" class="img-fluid rounded border border-1 border-secondary">
+                <img id="project-image" src="#" alt="Project image"
+                    class="img-fluid rounded border border-1 border-secondary">
             </div>
         </div>
         <div class="row">
@@ -46,67 +47,66 @@
 
         </div>
     </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const project = urlParams.get('id');
+        if (isNaN(project)) {
+            window.location.href = '/';
+        }
+
+        fetch('projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const projectData = data.projects.find(p => p.id === parseInt(project));
+
+                // remove current project from array
+                const index = data.projects.indexOf(projectData);
+                if (index > -1) {
+                    data.projects.splice(index, 1);
+                }
+
+                document.querySelector('#project-title').innerText = projectData.title;
+                document.querySelector('#project-image').src = projectData.image;
+                projectData.description = projectData.description.replace(/\\n/g, '<br>');
+                document.querySelector('#project-description').innerHTML = marked.parse(projectData.description);
+
+                const website = document.querySelector('#project-website');
+                if (projectData.url) {
+                    website.href = projectData.url;
+                    website.classList.remove('d-none');
+                }
+
+                const github = document.querySelector('#project-github');
+                if (projectData.github) {
+                    github.href = projectData.github;
+                    github.classList.remove('d-none');
+                }
+
+                const technologies = document.querySelector('#project-technologies');
+                projectData.tech.forEach(t => {
+                    const li = document.createElement('li');
+                    li.innerText = t;
+                    technologies.appendChild(li);
+                });
+
+                data.projects.sort(() => Math.random() - 0.5);
+                const relatedProjects = data.projects.slice(0, 3);
+
+                const otherProjects = document.querySelector('#otherProjects');
+                relatedProjects.forEach(p => {
+                    const card = document.createElement('div');
+                    card.classList.add('col');
+                    card.innerHTML = `
+                            <a href="project.html?id=${p.id}" class="text-white link-underline-none">
+                                <div class="project-image-container">
+                            <img src="${p.image}" class="img-fluid rounded border border-1 border-secondary" alt="${p.title}">
+                                </div>
+                            <h5>${p.title}</h5>
+                            </a>`;
+                    otherProjects.appendChild(card);
+                });
+            });
+    </script>
 </body>
-
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const project = urlParams.get('id');
-    if (isNaN(project)) {
-        window.location.href = '/';
-    }
-
-    fetch('projects.json')
-        .then(response => response.json())
-        .then(data => {
-            const projectData = data.projects.find(p => p.id === parseInt(project));
-
-            // remove current project from array
-            const index = data.projects.indexOf(projectData);
-            if (index > -1) {
-                data.projects.splice(index, 1);
-            }
-
-            document.querySelector('#project-title').innerText = projectData.title;
-            document.querySelector('#project-image').src = projectData.image;
-            projectData.description = projectData.description.replace(/\\n/g, '<br>');
-            document.querySelector('#project-description').innerHTML = marked.parse(projectData.description);
-
-            const website = document.querySelector('#project-website');
-            if (projectData.url) {
-                website.href = projectData.url;
-                website.classList.remove('d-none');
-            }
-
-            const github = document.querySelector('#project-github');
-            if (projectData.github) {
-                github.href = projectData.github;
-                github.classList.remove('d-none');
-            }
-
-            const technologies = document.querySelector('#project-technologies');
-            projectData.tech.forEach(t => {
-                const li = document.createElement('li');
-                li.innerText = t;
-                technologies.appendChild(li);
-            });
-
-            data.projects.sort(() => Math.random() - 0.5);
-            const relatedProjects = data.projects.slice(0, 3);
-
-            const otherProjects = document.querySelector('#otherProjects');
-            relatedProjects.forEach(p => {
-                const card = document.createElement('div');
-                card.classList.add('col');
-                card.innerHTML = `
-                        <a href="project.html?id=${p.id}" class="text-white link-underline-none">
-                            <div class="project-image-container">
-                        <img src="${p.image}" class="img-fluid rounded border border-1 border-secondary" alt="${p.title}">
-                            </div>
-                        <h5>${p.title}</h5>
-                        </a>`;
-                otherProjects.appendChild(card);
-            });
-        });
-</script>
 
 </html>
