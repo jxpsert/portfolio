@@ -36,9 +36,9 @@
         </div>
         <div class="row">
             <div class="col">
-                <a id="project-website" href="" class="btn btn-secondary d-none"><i
+                <a id="project-website" target="_blank" href="" class="btn btn-secondary d-none"><i
                         class="bi bi-globe"></i>&nbsp;Website</a>
-                <a id="project-github" href="" class="btn btn-secondary d-none"><i
+                <a id="project-github" target="_blank" href="" class="btn btn-secondary d-none"><i
                         class="bi bi-github"></i>&nbsp;GitHub</a>
             </div>
         </div>
@@ -68,6 +68,10 @@
                 document.querySelector('#project-title').innerText = projectData.title;
                 document.querySelector('#project-image').src = projectData.image;
                 projectData.description = projectData.description.replace(/\\n/g, '<br>');
+                const renderer = new marked.Renderer();
+                renderer.link = (href, title, text) => `<a target="_blank" href="${href}" title="${title}" class="text-white">${text}</a>`;
+                marked.use({ renderer });
+
                 document.querySelector('#project-description').innerHTML = marked.parse(projectData.description);
 
                 const website = document.querySelector('#project-website');
