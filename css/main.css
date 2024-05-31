@@ -27,6 +27,12 @@ b {
     font-weight: 700 !important;
 }
 
+i.bi {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
 .link-underline-none {
     text-decoration: none;
 }
@@ -41,14 +47,13 @@ b {
 .project-image-container img {
     width: 100%;
     height: auto;
-    /* Ensures the image maintains its aspect ratio */
 }
 
 img.headshot {
     border-radius: 0 0 50% 50%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    width: 50%;
+    width: 35%;
     text-align: center;
 }
 
@@ -115,6 +120,9 @@ ul.horizontal>li:not(:first-child)::before {
 
 .experience-card-logo {
     max-width: 100%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 .project-image {
@@ -122,6 +130,41 @@ ul.horizontal>li:not(:first-child)::before {
     border-radius: 0.5em;
     aspect-ratio: 16/9;
     object-fit: cover;
+}
+
+.description {
+    margin-top: 0.5em;
+}
+
+.description span {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    font-weight: 600;
+}
+
+.description p {
+    display: none;
+    margin-top: 0.25em;
+}
+
+.description.expanded p {
+    display: block;
+}
+
+.description span:hover {
+    cursor: pointer;
+}
+
+.description>span>i {
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.description.expanded>span>i {
+    transform: rotate(-540deg);
+    -webkit-transform: rotate(-540deg);
+    -moz-transform: rotate(-540deg);
 }
 
 @media only screen and (min-width: 700px) {

@@ -1,13 +1,14 @@
 {
     "jobs": [
         {
+            "id": 1,
             "start": "februari 2024",
             "end": null,
             "company": "Wux",
             "company_logo": "./assets/logos/wux-logo.png",
             "company_url": "https://wux.nl",
-            "title": "Stage Back-end developer",
-            "description": "Stage als back-end developer.",
+            "title": "Stagiair Back-end developer",
+            "description": "Stage als back-end developer. Vooral bezig met het bouwen van interne applicaties, om het werk gemakkelijker te maken. Ook bezig met het updaten en onderhouden van verouderde applicaties en websites.",
             "city": "Cuijk",
             "country": "Nederland",
             "skills": [
@@ -20,13 +21,14 @@
             ]
         },
         {
+            "id": 2,
             "start": "april 2023",
             "end": null,
             "company": "HC Support",
             "company_logo": "./assets/logos/hc-support-logo.png",
             "company_url": "https://hcparkeerservice.nl",
             "title": "Operator VMC",
-            "description": "Operator in de Verkeersmanagementcentrale van de gemeente Nijmegen.",
+            "description": "Operator in de Verkeersmanagementcentrale van de gemeente Nijmegen. Hier ben ik het aanspreekpunt voor beheerders van parkeergarages en -terreinen in Nijmegen. Ook houd ik verkeerscamera's in de gaten en houd ik contact met politie, brandweer en andere instanties bij incidenten.",
             "city": "Nijmegen",
             "country": "Nederland",
             "skills": [
@@ -36,13 +38,14 @@
             ]
         },
         {
+            "id": 3,
             "start": "oktober 2021",
             "end": "januari 2023",
             "company": "Albert Heijn",
             "company_logo": "./assets/logos/ah-logo.png",
             "company_url": "https://www.ah.nl",
             "title": "Verkoopmedewerker",
-            "description": "Verkoopmedewerker bij Albert Heijn XL Nijmegen.",
+            "description": "Verkoopmedewerker bij Albert Heijn XL Nijmegen. Onder andere werkzaam als vakkenvuller, en medewerker Pick-up Point en vooral bezig met neventaken.",
             "city": "Nijmegen",
             "country": "Nederland",
             "skills": [
@@ -50,13 +53,14 @@
             ]
         },
         {
+            "id": 4,
             "start": "juni 2021",
             "end": "oktober 2021",
             "company": "New York Pizza",
             "company_logo": "./assets/logos/nyp-logo.png",
             "company_url": "https://www.newyorkpizza.nl",
             "title": "Fietsbezorger",
-            "description": "Fietsbezorger bij New York Pizza Nijmegen Leuvensbroek.",
+            "description": "Fietsbezorger bij de vestiging Nijmegen Leuvensbroek. Bezorggebied van de noordelijke A73 tot en met de Weezenhof. ",
             "city": "Nijmegen",
             "country": "Nederland",
             "skills": []

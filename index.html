@@ -6,9 +6,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Jasper Platenburg">
-    <meta name="description" content="Portfolio website">
+    <meta name="description" content="Software developer in opleiding">
     <meta name="keywords" content="jasper, platenburg, kw1c, software developer">
     <meta charset="UTF-8">
+
+    <meta property="og:title" content="Jasper Platenburg">
+    <meta property="og:description" content="Software developer in opleiding">
+    <meta property="og:image" content="https://jasperplatenburg.nl/assets/images/headshot.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="nl_NL">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -175,6 +181,13 @@
                     html += `</ul>`;
                     html += `</div>`;
                     html += `</div>`;
+
+                    if (job.description) {
+                        html += `<div id="description-job-${job.id}" class="description ms-0 ps-0 ms-md-5 ps-md-5">`;
+                        html += `<span onclick="toggleDescription('description-job-${job.id}')">Meer informatie <i class="bi bi-chevron-down"></i></span>`;
+                        html += `<p>${job.description}</p>`;
+                        html += `</div>`;
+                    }
                     html += `</div>`;
 
                     jobCard.innerHTML = html;
@@ -216,6 +229,13 @@
                     html += `</ul>`;
                     html += `</div>`;
                     html += `</div>`;
+
+                    if (education.description) {
+                        html += `<div id="description-edu-${education.id}" class="description ms-0 ps-0 ms-md-5 ps-md-5">`;
+                        html += `<span onclick="toggleDescription('description-edu-${education.id}')">Meer informatie <i class="bi bi-chevron-down"></i></span>`;
+                        html += `<p>${education.description}</p>`;
+                        html += `</div>`;
+                    }
                     html += `</div>`;
 
                     educationCard.innerHTML = html;
@@ -225,13 +245,36 @@
     </script>
 
     <script>
-        const age = document.getElementById("age");
-        const birthdate = new Date(2005, 5, 18);
-        const now = new Date();
-        const ageDiff = now - birthdate;
-        const ageDate = new Date(ageDiff);
-        age.innerHTML = Math.abs(ageDate.getUTCFullYear() - 1970);
+        const toggleDescription = (id) => {
+            const descriptions = document.querySelectorAll(".description");
+            descriptions.forEach(description => {
+                if (description.id !== id) {
+                    description.classList.remove("expanded");
+                }
+            });
+
+            const description = document.getElementById(id);
+            description.classList.toggle("expanded");
+        };
     </script>
+
+    <script>
+        const age = document.getElementById("age");
+        const birthdate = new Date(2005, 3, 18); // April 18, 2005 (month is 3 because months are 0-indexed)
+        const now = new Date();
+
+        let ageValue = now.getFullYear() - birthdate.getFullYear();
+        const monthDiff = now.getMonth() - birthdate.getMonth();
+        const dayDiff = now.getDate() - birthdate.getDate();
+
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+            ageValue--;
+        }
+
+        age.innerHTML = ageValue;
+    </script>
+
+
 </body>
 
 </html>

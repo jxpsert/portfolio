@@ -1,6 +1,7 @@
 {
     "education": [
         {
+            "id": 1,
             "start": "september 2023",
             "end": null,
             "school": "Koning Willem I College",
@@ -17,9 +18,11 @@
                 "C#",
                 "PHP",
                 "SQL"
-            ]
+            ],
+            "description": "MBO4-opleiding tot Software Developer waar ik gebruik maak van verschillende programmeertalen zoals C# en PHP. Daarnaast krijg ik ook kennis van Microsoft Office, HTML, CSS en SQL."
         },
         {
+            "id": 2,
             "start": "augustus 2021",
             "end": "maart 2023",
             "school": "Hogeschool van Arnhem en Nijmegen",
@@ -36,9 +39,11 @@
                 "Java",
                 "PHP",
                 "SQL"
-            ]
+            ],
+            "description": "2 jaar HBO-ICT gevolgd aan de Hogeschool van Arnhem en Nijmegen. Hier heb ik kennis gemaakt met verschillende programmeertalen zoals Java en PHP. Ik ben hier zonder propedeuse gestopt in maart 2023 omdat ik liever praktisch leer."
         },
         {
+            "id": 3,
             "start": "augustus 2016",
             "end": "juni 2021",
             "school": "Aloysius Park Neerbosch",
