@@ -1,26 +1,6 @@
 {
     "jobs": [
         {
-            "id": 1,
-            "start": "februari 2024",
-            "end": null,
-            "company": "Wux",
-            "company_logo": "./assets/logos/wux-logo.png",
-            "company_url": "https://wux.nl",
-            "title": "Stagiair back-end developer",
-            "description": "Stage als back-end developer. Vooral bezig met het bouwen van interne applicaties, om het werk gemakkelijker te maken. Ook bezig met het updaten en onderhouden van verouderde applicaties en websites.",
-            "city": "Cuijk",
-            "country": "Nederland",
-            "skills": [
-                "PHP",
-                "Laravel",
-                "MySQL",
-                "HTML",
-                "CSS",
-                "JavaScript"
-            ]
-        },
-        {
             "id": 2,
             "start": "april 2023",
             "end": null,
@@ -35,6 +15,26 @@
                 "Microsoft Office",
                 "Klantenservice",
                 "Topdesk"
+            ]
+        },
+        {
+            "id": 1,
+            "start": "februari 2024",
+            "end": "juni 2024",
+            "company": "Wux",
+            "company_logo": "./assets/logos/wux-logo.png",
+            "company_url": "https://wux.nl",
+            "title": "Stagiair back-end developer",
+            "description": "Stage als back-end developer. Vooral bezig met het bouwen van interne applicaties, om het werk gemakkelijker te maken. Ook bezig met het updaten en onderhouden van verouderde applicaties en websites.",
+            "city": "Cuijk",
+            "country": "Nederland",
+            "skills": [
+                "PHP",
+                "Laravel",
+                "MySQL",
+                "HTML",
+                "CSS",
+                "JavaScript"
             ]
         },
         {
