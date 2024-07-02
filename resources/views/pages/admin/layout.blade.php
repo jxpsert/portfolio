@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title') - PortCMS</title>
+    <title>@yield('title') - Capolyo</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -51,6 +51,8 @@
                     <a href="{{ route('admin.settings.index') }}"
                         class="menu-item {{ $activeRoute }}">{{ __('Settings') }}</a>
 
+                    <a target="_blank" href="{{ route('home') }}" class="menu-item">{{ __('View site') }}<i
+                            class="bi bi-box-arrow-up-right ms-2"></i></a>
                     <a href="{{ route('admin.logout') }}" class="menu-item">{{ __('auth.logout') }}</a>
                 </div>
             </div>
