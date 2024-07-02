@@ -22,7 +22,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.companies.create');
     }
 
     /**
@@ -30,23 +30,30 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255|unique:companies,name',
+            'url' => 'required|url',
+            'logo' => 'required|image|mimes:png',
+        ]);
+
+        $company = Company::create($request->all());
+
+        // Get the logo file
+        $logo = $request->file('logo');
+        $logo->storeAs('public/assets/logos', $company->id . '.png');
+
+        return redirect()->route('admin.companies.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Company $company)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Company $company)
     {
-        //
+        return view('pages.admin.companies.edit', [
+            'company' => $company
+        ]);
     }
 
     /**
@@ -54,7 +61,20 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255|unique:companies,name,' . $company->id . ',id',
+            'url' => 'required|url',
+            'logo' => 'nullable|image|mimes:png',
+        ]);
+
+        $company->update($request->all());
+
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logo->storeAs('public/assets/logos', $company->id . '.png');
+        }
+
+        return redirect()->route('admin.companies.index');
     }
 
     /**
@@ -62,6 +82,8 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        $company->delete();
+
+        return redirect()->route('admin.companies.index');
     }
 }

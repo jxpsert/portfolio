@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12 col-md-2 my-auto"><a href="{{ $experience->company->url }}" target="_blank"
                     class="image-link" title="naar HC Support"><img alt="Bedrijfslogo"
-                        src="{{ asset('assets/logos/' . $experience->company->id . '.png') }}"
+                        src="{{ asset('storage/assets/logos/' . $experience->company->id . '.png') }}"
                         class="experience-card-logo"></a></div>
             <div class="col"><span class="fs-4 fw-bold">{{ $experience->title }}</span><br><span
                     class="fs-6">{{ $experience->company->name }} ·

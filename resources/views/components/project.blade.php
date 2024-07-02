@@ -5,7 +5,7 @@
         <span class="text-muted fs-6">{{ $project->subtitle }}</span>
     @endif
     <a href="{{ route('projects.show', $project) }}"><img class="img-fluid project-image mb-2"
-            src="{{ asset('assets/projects/' . $project->id . '.png') }}"></a>
+            src="{{ asset('storage/assets/projects/' . $project->id . '.png') }}"></a>
 
     @if ($project->github)
         <a href="{{ $project->github }}" class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover"

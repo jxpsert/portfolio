@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.9",
+        "laravel/helpers": "^1.7",
         "laravel/tinker": "^2.9",
         "spatie/laravel-markdown": "^2.5"
     },

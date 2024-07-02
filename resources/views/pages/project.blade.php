@@ -49,7 +49,7 @@
                 @endif
             </div>
             <div class="col-12 col-md-8">
-                <img id="project-image" src="{{ asset('assets/projects/' . $project->id . '.png') }}"
+                <img id="project-image" src="{{ asset('storage/assets/projects/' . $project->id . '.png') }}"
                     alt="Project image" class="img-fluid rounded border border-1 border-secondary">
             </div>
         </div>
@@ -73,7 +73,7 @@
                     <div class="col">
                         <a href="{{ route('projects.show', $relatedProject) }}" class="text-white link-underline-none">
                             <div class="project-image-container">
-                                <img src="{{ asset('assets/projects/' . $relatedProject->id . '.png') }}"
+                                <img src="{{ asset('storage/assets/projects/' . $relatedProject->id . '.png') }}"
                                     class="img-fluid rounded border border-1 border-secondary"
                                     alt="{{ $relatedProject->title }}">
                             </div>

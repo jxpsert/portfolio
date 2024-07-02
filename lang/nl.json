@@ -22,5 +22,6 @@
     "Delete :resource": ":resource verwijderen",
     "Save": "Opslaan",
     "Cancel": "Annuleren",
-    "Back": "Terug"
+    "Back": "Terug",
+    "Current": "Huidig"
 }

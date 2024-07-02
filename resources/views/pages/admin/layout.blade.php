@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="col-10 overflow-y-auto pt-4">
-            <div class="container">
+            <div class="px-5">
                 @yield('content')
             </div>
         </div>
