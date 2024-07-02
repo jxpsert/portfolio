@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
+use App\Models\Category;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 
@@ -12,8 +14,9 @@ class ExperienceController extends Controller
      */
     public function index()
     {
+        $experiences = Experience::orderByRaw('end IS NULL DESC')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get();
         return view('pages.admin.experiences.index', [
-            'experiences' => Experience::all()
+            'experiences' => $experiences
         ]);
     }
 
@@ -22,7 +25,10 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.experiences.create', [
+            'categories' => Category::pluck('name', 'id'),
+            'companies' => Company::pluck('name', 'id')
+        ]);
     }
 
     /**
@@ -30,15 +36,24 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'type' => 'required|in:work,education',
+            'title' => 'required|string|max:255',
+            'company_id' => 'required|integer|exists:companies,id',
+            'start' => 'required|date',
+            'end' => 'nullable|date',
+            'description' => 'required|string',
+            'city' => 'required|string|max:255',
+            'categories' => 'nullable|array'
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Experience $experience)
-    {
-        //
+        $experience = Experience::create($request->all());
+
+        // Attach the categories
+        if($request->has('categories'))
+            $experience->categories()->attach($request->categories);
+
+        return redirect()->route('admin.experiences.index');
     }
 
     /**
@@ -46,7 +61,11 @@ class ExperienceController extends Controller
      */
     public function edit(Experience $experience)
     {
-        //
+        return view('pages.admin.experiences.edit', [
+            'experience' => $experience,
+            'categories' => Category::pluck('name', 'id'),
+            'companies' => Company::pluck('name', 'id')
+        ]);
     }
 
     /**
@@ -54,7 +73,24 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, Experience $experience)
     {
-        //
+        $request->validate([
+            'type' => 'required|in:work,education',
+            'title' => 'required|string|max:255',
+            'company_id' => 'required|integer|exists:companies,id',
+            'start' => 'required|date',
+            'end' => 'nullable|date',
+            'description' => 'required|string',
+            'city' => 'required|string|max:255',
+            'categories' => 'nullable|array'
+        ]);
+
+        $experience->update($request->all());
+
+        // Sync the categories
+        if($request->has('categories'))
+            $experience->categories()->sync($request->categories);
+
+        return redirect()->route('admin.experiences.index');
     }
 
     /**
@@ -63,5 +99,7 @@ class ExperienceController extends Controller
     public function destroy(Experience $experience)
     {
         $experience->delete();
+
+        return redirect()->route('admin.experiences.index');
     }
 }

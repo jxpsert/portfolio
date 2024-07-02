@@ -10,7 +10,7 @@
                         class="experience-card-logo"></a></div>
             <div class="col"><span class="fs-4 fw-bold">{{ $experience->title }}</span><br><span
                     class="fs-6">{{ $experience->company->name }} ·
-                    {{ $experience->city }}, {{ __('countries.' . $experience->country) }}</span>
+                    {{ $experience->city }}</span>
                 <ul class="horizontal fst-italic skills-list">
                     @foreach ($experience->categories as $category)
                         <li>{{ $category->name }}</li>

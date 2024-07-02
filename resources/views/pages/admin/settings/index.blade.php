@@ -74,7 +74,9 @@
                     saveButton.innerText = '{{ __('Save') }}';
                 }, 2000);
             } else {
-                alert('{{ __('Error saving settings') }}');
+                saveButton.classList.add('btn-danger');
+                saveButton.innerText = '{{ __('Error') }}';
+                saveButton.disabled = true;
             }
         });
     </script>

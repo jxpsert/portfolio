@@ -10,9 +10,12 @@ class PageController extends Controller
 {
     public function home()
     {
+        $workExperiences = Experience::where('type', 'work')->orderByRaw('end IS NULL DESC')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get();
+        $educationExperiences = Experience::where('type', 'education')->orderByRaw('end IS NULL DESC')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get();
+
         return view('pages.home', [
-            'workExperiences' => Experience::where('type', 'work')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get(),
-            'educationExperiences' => Experience::where('type', 'education')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get(),
+            'workExperiences' => $workExperiences,
+            'educationExperiences' => $educationExperiences,
             'projects' => Project::all()
         ]);
     }

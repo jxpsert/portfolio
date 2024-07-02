@@ -10,7 +10,7 @@ class Experience extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['type', 'start', 'end', 'company', 'title', 'description', 'city', 'country'];
+    protected $fillable = ['type', 'start', 'end', 'company_id', 'title', 'description', 'city'];
 
     public function company()
     {
