@@ -3,11 +3,20 @@
 
 <head>
     <title>{{ setting('site_name') }}</title>
+    @php
+        $keywords = [];
+        $sitename = setting('site_name');
+        $title = setting('title');
+
+        $keywords = array_merge($keywords, explode(' ', $sitename));
+        $keywords = array_merge($keywords, explode(' ', $title));
+
+    @endphp
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ setting('site_name') }}">
     <meta name="description" content="{{ setting('title') }}">
-    <meta name="keywords" content="jasper, platenburg, kw1c, software developer">
+    <meta name="keywords" content="{{ implode(', ', $keywords) }}">
     <meta charset="UTF-8">
 
     <meta property="og:title" content="{{ setting('site_name') }}">
