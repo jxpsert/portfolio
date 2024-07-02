@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'login' => 'Login',
-    'logout' => 'Log out',
-    'email' => 'Email address',
-    'password' => 'Password',
+    'login' => 'Inloggen',
+    'logout' => 'Uitloggen',
+    'email' => 'E-mailadres',
+    'password' => 'Wachtwoord',
 
 ];
