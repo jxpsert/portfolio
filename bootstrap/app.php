@@ -11,7 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
         then: function ($router) {
-           Route::namespace('Admin')->prefix('admin')->name('admin.')->group(base_path('routes/admin.php'));
+           Route::prefix('admin')->name('admin.')->group(base_path('routes/admin.php'));
         }
     )
     ->withMiddleware(function (Middleware $middleware) {

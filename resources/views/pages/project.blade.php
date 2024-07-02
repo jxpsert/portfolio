@@ -2,16 +2,16 @@
 <html lang="nl-NL">
 
 <head>
-    <title>{{ $project->title }} - Jasper Platenburg</title>
+    <title>{{ $project->title }} - {{ setting('site_name') }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Jasper Platenburg">
-    <meta name="description" content="Software developer in opleiding">
+    <meta name="author" content="{{ setting('site_name') }}">
+    <meta name="description" content="{{ setting('title') }}">
     <meta name="keywords" content="jasper, platenburg, kw1c, software developer">
     <meta charset="UTF-8">
 
-    <meta property="og:title" content="Jasper Platenburg">
-    <meta property="og:description" content="Software developer in opleiding">
+    <meta property="og:title" content="{{ setting('site_name') }}">
+    <meta property="og:description" content="{{ setting('title') }}">
     <meta property="og:image" content="{{ asset('assets/images/images/headshot.png') }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">
@@ -22,7 +22,7 @@
 
 <body>
     <div class="container vh-100 bg-dark pt-3">
-        <a href="/" class="btn-link text-white"><i class="bi bi-arrow-left"></i>&nbsp;Terug</a>
+        <a href="/" class="btn-link text-white"><i class="bi bi-arrow-left"></i>&nbsp;{{ __('Back') }}</a>
         <div class="row text-white mt-3">
             <div class="col-12 col-md-4">
                 <h1 class="text-white fw-bold" id="project-title">
@@ -39,12 +39,14 @@
                     {!! $description !!}
                 </p>
                 <br>
-                <h5>Gebruikte technologieën</h5>
-                <ul id="project-technologies" class="horizontal">
-                    @foreach ($project->categories as $category)
-                        <li>{{ $category->name }}</li>
-                    @endforeach
-                </ul>
+                @if ($project->categories->count() > 0)
+                    <h5>Gebruikte technologieën</h5>
+                    <ul id="project-technologies" class="horizontal">
+                        @foreach ($project->categories as $category)
+                            <li>{{ $category->name }}</li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
             <div class="col-12 col-md-8">
                 <img id="project-image" src="{{ asset('assets/projects/' . $project->id . '.png') }}"
@@ -65,7 +67,7 @@
             </div>
         </div>
         @if ($relatedProjects)
-            <h2 class="text-white mt-3">Andere projecten</h2>
+            <h2 class="text-white mt-3">{{ __('Other projects') }}</h2>
             <div id="otherProjects" class="row row-cols-1 row-cols-md-3 g-3">
                 @foreach ($relatedProjects as $relatedProject)
                     <div class="col">

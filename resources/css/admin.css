@@ -18,6 +18,10 @@
     background-color: #ffffff1f;
 }
 
-.sidebar-menu .menu-item:not(:last-child) {
+.sidebar-menu .menu-item:not(:last-child):not(.active) {
     border-bottom: 1px solid #ffffff1f;
+}
+
+.fs-xl {
+    font-size: 5em;
 }

@@ -15,15 +15,50 @@
         <div class="col-2 bg-dark">
             <div class="container mt-3">
                 <div class="sidebar-menu">
-                    <a class="menu-item active">{{ __('Dashboard') }}</a>
-                    <a class="menu-item">{{ __('Experiences') }}</a>
-                    <a class="menu-item">{{ __('Projects') }}</a>
+                    @php
+                        $activeRoute = Route::is('admin.dashboard') ? 'active' : '';
+                    @endphp
+                    <a href="{{ route('admin.dashboard') }}"
+                        class="menu-item {{ $activeRoute }}">{{ __('Dashboard') }}</a>
+
+                    @php
+                        $activeRoute = Route::is('admin.experiences.*') ? 'active' : '';
+                    @endphp
+                    <a href="{{ route('admin.experiences.index') }}"
+                        class="menu-item {{ $activeRoute }}">{{ __('Experiences') }}</a>
+
+                    @php
+                        $activeRoute = Route::is('admin.projects.*') ? 'active' : '';
+                    @endphp
+                    <a href="{{ route('admin.projects.index') }}"
+                        class="menu-item {{ $activeRoute }}">{{ __('Projects') }}</a>
+
+                    @php
+                        $activeRoute = Route::is('admin.categories.*') ? 'active' : '';
+                    @endphp
+                    <a href="{{ route('admin.categories.index') }}"
+                        class="menu-item {{ $activeRoute }}">{{ __('Categories') }}</a>
+
+                    @php
+                        $activeRoute = Route::is('admin.companies.*') ? 'active' : '';
+                    @endphp
+                    <a href="{{ route('admin.companies.index') }}"
+                        class="menu-item {{ $activeRoute }}">{{ __('Companies') }}</a>
+
+                    @php
+                        $activeRoute = Route::is('admin.settings.*') ? 'active' : '';
+                    @endphp
+                    <a href="{{ route('admin.settings.index') }}"
+                        class="menu-item {{ $activeRoute }}">{{ __('Settings') }}</a>
+
                     <a href="{{ route('admin.logout') }}" class="menu-item">{{ __('auth.logout') }}</a>
                 </div>
             </div>
         </div>
-        <div class="col-auto overflow-y-auto">
-            @yield('content')
+        <div class="col-10 overflow-y-auto pt-4">
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
     </div>
 </body>

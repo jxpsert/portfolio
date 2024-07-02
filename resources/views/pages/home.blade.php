@@ -2,16 +2,16 @@
 <html lang="nl-NL">
 
 <head>
-    <title>Jasper Platenburg</title>
+    <title>{{ setting('site_name') }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Jasper Platenburg">
-    <meta name="description" content="Software developer in opleiding">
+    <meta name="author" content="{{ setting('site_name') }}">
+    <meta name="description" content="{{ setting('title') }}">
     <meta name="keywords" content="jasper, platenburg, kw1c, software developer">
     <meta charset="UTF-8">
 
-    <meta property="og:title" content="Jasper Platenburg">
-    <meta property="og:description" content="Software developer in opleiding">
+    <meta property="og:title" content="{{ setting('site_name') }}">
+    <meta property="og:description" content="{{ setting('title') }}">
     <meta property="og:image" content="{{ asset('assets/images/images/headshot.png') }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">

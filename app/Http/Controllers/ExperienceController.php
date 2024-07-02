@@ -12,7 +12,9 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.admin.experiences.index', [
+            'experiences' => Experience::all()
+        ]);
     }
 
     /**

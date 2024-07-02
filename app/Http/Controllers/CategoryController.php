@@ -12,7 +12,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.admin.categories.index', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -20,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.categories.create');
     }
 
     /**
@@ -28,15 +30,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
+        Category::create($request->all());
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -44,7 +44,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('pages.admin.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -52,7 +54,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $category->id . ',id',
+        ]);
+
+        $category->update($request->all());
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -60,6 +68,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('admin.categories.index');
     }
 }
