@@ -52,6 +52,10 @@ class ProjectController extends Controller
 
         $project = Project::create($request->all());
 
+        // Attach the categories
+        if($request->has('categories'))
+            $project->categories()->attach($request->categories);
+
         // Get the image file
         $image = $request->file('image');
         $image->storeAs('public/assets/projects', $project->id . '.png');
@@ -76,7 +80,7 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $request->validate([
-            'slug' => 'required|string|max:255|unique:projects,slug',
+            'slug' => 'required|string|max:255|unique:projects,slug,' . $project->id . ',id',
             'title' => 'required|string|max:255',
             'subtitle' => 'nullable|string|max:255',
             'url' => 'nullable|url|max:255',
@@ -91,6 +95,10 @@ class ProjectController extends Controller
         ]);
 
         $project->update($request->all());
+
+        // Sync the categories
+        if($request->has('categories'))
+            $project->categories()->sync($request->categories);
 
         if($request->hasFile('image')) {
             $image = $request->file('image');
