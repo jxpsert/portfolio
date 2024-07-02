@@ -108,6 +108,18 @@
         </div>
 
         <div class="form-group mt-3">
+            <label for="categories">{{ __('projects.categories') }}</label>
+            <select id="categories" class="form-control bg-light @error('categories') is-invalid @enderror"
+                name="categories[]" multiple required autofocus>
+                @foreach ($categories as $id => $category)
+                    <option value="{{ $id }}" @if ($project->categories->contains($id)) selected @endif>
+                        {{ $category }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group mt-3">
             <button type="submit" class="btn btn-primary">
                 {{ __('Save') }}
             </button>

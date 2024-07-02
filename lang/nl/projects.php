@@ -9,4 +9,5 @@ return [
     'description_help' => 'Markdown wordt ondersteund',
     'url' => 'URL',
     'github' => 'GitHub',
+    'categories' => 'Categorieën',
 ];
