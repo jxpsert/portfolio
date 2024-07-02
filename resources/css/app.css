@@ -3,6 +3,7 @@
 @import url("./bootstrap.min.css");
 
 @import url("./auth.css");
+@import url("./admin.css");
 
 * {
     font-family: "Sarala", sans-serif;
@@ -12,6 +13,7 @@ html,
 body {
     min-height: 100vh;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 a:not(.btn):not([class*="text-"]) {

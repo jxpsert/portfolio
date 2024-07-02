@@ -1,0 +1,23 @@
+.sidebar-menu {
+    display: grid;
+    grid-template-columns: auto;
+    color: white;
+}
+
+.sidebar-menu .menu-item {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebar-menu .menu-item.active {
+    border-bottom: 1px solid #fff;
+}
+
+.sidebar-menu .menu-item:hover {
+    background-color: #ffffff1f;
+}
+
+.sidebar-menu .menu-item:not(:last-child) {
+    border-bottom: 1px solid #ffffff1f;
+}
