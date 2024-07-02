@@ -8,7 +8,7 @@ return [
     'title' => 'Titel',
     'description' => 'Beschrijving',
     'duration' => 'Duur',
-    'city' => 'Stad',
+    'city' => 'Plaats',
     'country' => 'Land',
 
     'categories' => 'Categorieën',
