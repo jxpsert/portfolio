@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="{{ setting('site_name') }}">
     <meta property="og:description" content="{{ setting('title') }}">
-    <meta property="og:image" content="{{ asset('assets/images/images/headshot.png') }}">
+    <meta property="og:image" content="{{ asset('storage/assets/photo.png') }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">
 
@@ -26,7 +26,7 @@
             <div id="sidebar" class="col-12 col-md-3 bg-dark text-white sticky-top h-100">
                 <div class="container pt-3">
                     <div class="text-center">
-                        <img alt="Foto van gezicht" src="{{ asset('assets/images/headshot.png') }}"
+                        <img alt="Foto van gezicht" src="{{ asset('storage/assets/photo.png') }}"
                             class="headshot mt-4 mt-md-3">
                         <h1 class="fw-bold mt-4">{{ setting('site_name') }}</h1>
                         <span class="fs-5">{{ setting('title') }}</span>

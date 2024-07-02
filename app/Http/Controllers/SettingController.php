@@ -17,51 +17,22 @@ class SettingController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function set()
     {
-        //
-    }
+        $settings = request()->all();
+        foreach ($settings as $key => $value) {
+            try {
+            $setting = Setting::where('key', $key)->update(['value' => $value ?? '']);
+            } catch (\Exception $e) {
+                // Ignore key
+            }
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        if(request()->hasFile('photo')) {
+            $logo = request()->file('photo');
+            $logo->storeAs('public/assets', 'photo.png');
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Setting $setting)
-    {
-        //
+        return redirect()->route('admin.settings.index')->with('success', 'Settings updated successfully');
     }
 }

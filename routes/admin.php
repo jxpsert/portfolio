@@ -31,4 +31,5 @@ Route::group(['middleware' => ['web', IsLoggedIn::class]], function () {
     Route::resource('projects', ProjectController::class)->except('show');
     Route::resource('companies', CompanyController::class)->except('show');
     Route::resource('settings', SettingController::class)->except('show');
+    Route::post('settings/set', [SettingController::class, 'set'])->name('settings.set');
 });

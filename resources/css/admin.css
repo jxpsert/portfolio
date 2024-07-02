@@ -36,6 +36,11 @@
     object-fit: cover;
 }
 
+.setting-image {
+    width: 4rem;
+    object-fit: cover;
+}
+
 label.required::after {
     content: "*";
     color: #800000;
