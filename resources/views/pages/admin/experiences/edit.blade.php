@@ -22,6 +22,7 @@
 
     <form method="POST" action="{{ route('admin.experiences.update', [$experience]) }}">
         @csrf
+        @method('PATCH')
 
         <div class="form-group">
             <label for="type">{{ __('experiences.type') }}</label>
