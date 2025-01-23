@@ -22,6 +22,12 @@ a:not(.btn):not([class*="text-"]) {
     color: inherit !important;
 }
 
+.expected-date {
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+    cursor: help;
+}
+
 h1,
 h2,
 h3,

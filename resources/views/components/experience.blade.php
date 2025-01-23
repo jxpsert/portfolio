@@ -1,11 +1,21 @@
 @props(['experience'])
 <li class="timeline-point {{ $experience->end ? '' : 'current' }}">
     <span>{{ \Carbon\Carbon::parse($experience->start)->isoFormat('MMM Y') }} -
-        {{ $experience->end ? \Carbon\Carbon::parse($experience->end)->isoFormat('MMM Y') : strtolower(__('Present')) }}</span>
+        @if($experience->end)
+            @if($experience->end > \Carbon\Carbon::now() && $experience->type == 'education')
+            <span class="text-secondary fst-italic expected-date" title="{{__('Expected')}}">
+                {{ \Carbon\Carbon::parse($experience->end)->isoFormat('MMM Y') }}
+            </span>
+            @else
+                {{ \Carbon\Carbon::parse($experience->end)->isoFormat('MMM Y') }}
+            @endif
+        @else
+            {{ strtolower(__('Present')) }}
+        @endif</span>
     <div class="experience-card">
         <div class="row">
             <div class="col-12 col-md-2 my-auto"><a href="{{ $experience->company->url }}" target="_blank"
-                    class="image-link" title="naar HC Support"><img alt="Bedrijfslogo"
+                    class="image-link" title="naar {{ $experience->company->name }}"><img alt="Bedrijfslogo"
                         src="{{ asset('storage/assets/logos/' . $experience->company->id . '.png') }}"
                         class="experience-card-logo"></a></div>
             <div class="col"><span class="fs-4 fw-bold">{{ $experience->title }}</span><br><span

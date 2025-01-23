@@ -25,6 +25,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">
 
+    <script defer data-domain="jasperplatenburg.nl" src="https://plausible.platenburg.dev/js/script.outbound-links.js">
+    </script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
@@ -109,6 +112,7 @@
                                 <h2>Werkervaring</h2>
                                 <ul id="jobsList" class="list-unstyled timeline">
                                     @foreach ($workExperiences as $experience)
+                                        @if($experience->start > \Carbon\Carbon::now()) @continue @endif
                                         <x-experience :experience="$experience" />
                                     @endforeach
                                 </ul>
@@ -120,6 +124,7 @@
                                 <h2>Opleiding</h2>
                                 <ul id="educationList" class="list-unstyled timeline">
                                     @foreach ($educationExperiences as $experience)
+                                    @if($experience->start > \Carbon\Carbon::now()) @continue @endif
                                         <x-experience :experience="$experience" />
                                     @endforeach
                                 </ul>

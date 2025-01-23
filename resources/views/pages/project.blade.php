@@ -16,6 +16,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">
 
+    <script defer data-domain="jasperplatenburg.nl" src="https://plausible.platenburg.dev/js/script.outbound-links.js">
+    </script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>

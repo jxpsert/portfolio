@@ -10,8 +10,8 @@ class PageController extends Controller
 {
     public function home()
     {
-        $workExperiences = Experience::where('type', 'work')->orderByRaw('end IS NULL DESC')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get();
-        $educationExperiences = Experience::where('type', 'education')->orderByRaw('end IS NULL DESC')->orderBy('start', 'DESC')->orderBy('end', 'ASC')->get();
+        $workExperiences = Experience::where('type', 'work')->orderByRaw('end IS NULL DESC')->orderBy('end', 'DESC')->get();
+        $educationExperiences = Experience::where('type', 'education')->orderByRaw('end IS NULL DESC')->orderBy('end', 'DESC')->get();
 
         return view('pages.home', [
             'workExperiences' => $workExperiences,
@@ -31,5 +31,10 @@ class PageController extends Controller
             'relatedProjects' => $relatedProjects,
             'categories' => $categories
         ]);
+    }
+
+    public function links()
+    {
+        return view('pages.links');
     }
 }
