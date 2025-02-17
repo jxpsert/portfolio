@@ -12,5 +12,10 @@ return [
     'github' => 'GitHub',
     'linkedin' => 'LinkedIn',
 
+    'frontend_theme' => 'Thema',
+    'themes' => [
+        'alpha' => 'Alpha',
+        'bravo' => 'Bravo',
+    ],
     'photo' => 'Foto',
 ];

@@ -26,6 +26,20 @@
             @endforeach
             <tr>
                 <td>
+                    {{ __('settings.frontend_theme') }}
+                </td>
+                <td>
+                    @foreach(config('app.themes') as $value => $label)
+                    <div class="form-check">
+                        <input class="form-check-input setting" type="radio" name="frontend_theme" id="frontend_theme_{{ $value }}"
+                            value="{{ $value }}" {{ setting('frontend_theme') == $value ? 'checked' : '' }}>	
+                        <label class="form-check-label" for="frontend_theme_{{ $value }}">{{ $label }}</label>
+                    </div>
+                    @endforeach
+                </td>
+            </td>
+            <tr>
+                <td>
                     {{ __('settings.photo') }}
                 </td>
                 <td>
@@ -43,7 +57,10 @@
         saveButton.addEventListener('click', async () => {
             const settings = document.querySelectorAll('.setting');
             const data = Array.from(settings).reduce((acc, setting) => {
-                acc[setting.id] = setting.value;
+                if (setting.name === 'frontend_theme' && !setting.checked) {
+                    return acc;
+                }
+                acc[setting.name] = setting.value;
                 return acc;
             }, {});
 

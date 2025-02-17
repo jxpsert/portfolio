@@ -47,5 +47,10 @@ class SettingSeeder extends DatabaseSeeder
             'key' => 'linkedin',
             'value' => 'https://linkedin.com/in/jasper-platenburg',
         ]);
+
+        Setting:create([
+            'key' => 'frontend_theme',
+            'value' => 'alpha',
+        ]);
     }
 }

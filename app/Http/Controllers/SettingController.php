@@ -12,8 +12,13 @@ class SettingController extends Controller
      */
     public function index()
     {
+        $settings = Setting::all();
+        $settings = $settings->filter(function ($setting) {
+            return $setting->key !== 'frontend_theme';
+        });
+
         return view('pages.admin.settings.index', [
-            'settings' => Setting::all()
+            'settings' => $settings
         ]);
     }
 

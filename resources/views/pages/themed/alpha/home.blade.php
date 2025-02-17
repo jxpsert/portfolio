@@ -28,7 +28,7 @@
     <script defer data-domain="jasperplatenburg.nl" src="https://plausible.platenburg.dev/js/script.outbound-links.js">
     </script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/app-' . setting('frontend_theme') . '.css', 'resources/js/app.js'])
 
 </head>
 

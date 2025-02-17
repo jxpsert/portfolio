@@ -13,7 +13,7 @@ class PageController extends Controller
         $workExperiences = Experience::where('type', 'work')->orderByRaw('end IS NULL DESC')->orderBy('end', 'DESC')->get();
         $educationExperiences = Experience::where('type', 'education')->orderByRaw('end IS NULL DESC')->orderBy('end', 'DESC')->get();
 
-        return view('pages.home', [
+        return view('pages.themed.' . setting('frontend_theme') . '.home', [
             'workExperiences' => $workExperiences,
             'educationExperiences' => $educationExperiences,
             'projects' => Project::all()
@@ -26,7 +26,7 @@ class PageController extends Controller
         $relatedProjects = Project::where('id', '!=', $project->id)->get()->random(3);
         $categories = $project->categories->pluck('name')->toArray();
 
-        return view('pages.project', [
+        return view('pages.themed.' . setting('frontend_theme') . '.project', [
             'project' => $project,
             'relatedProjects' => $relatedProjects,
             'categories' => $categories
