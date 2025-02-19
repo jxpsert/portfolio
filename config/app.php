@@ -124,8 +124,8 @@ return [
     ],
 
     'themes' => [
-        'alpha' => 'Alpha',
-        'bravo' => 'Bravo',	
+        'alpha' => 'Alpha (2024)',
+        'bravo' => 'Bravo (2025)',	
     ]
 
 ];

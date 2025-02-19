@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarala:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-@import url("./bootstrap.min.css");
-@import url("./select2.css");
-
-@import url("./auth.css");
-@import url("./admin.css");
 
 * {
     font-family: "Sarala", sans-serif;
@@ -61,21 +55,21 @@ ul.horizontal {
     padding-left: 0;
 }
 
-ul.horizontal > li {
+ul.horizontal>li {
     display: inline;
     display: inline-block;
     margin-right: 0.25em;
 }
 
-ul.horizontal > li:not(:first-child)::before {
+ul.horizontal>li:not(:first-child)::before {
     content: "· ";
 }
 
-.image-link > img {
+.image-link>img {
     transition: 0.3s;
 }
 
-.image-link:hover > img {
+.image-link:hover>img {
     padding: 0.25em;
 }
 
@@ -156,12 +150,12 @@ ul.horizontal > li:not(:first-child)::before {
     cursor: pointer;
 }
 
-.description > span > i {
+.description>span>i {
     transition: transform 0.3s;
     display: inline-block;
 }
 
-.description.expanded > span > i {
+.description.expanded>span>i {
     transform: rotate(-540deg);
     -webkit-transform: rotate(-540deg);
     -moz-transform: rotate(-540deg);
@@ -187,7 +181,7 @@ ul.horizontal > li:not(:first-child)::before {
 }
 
 @media only screen and (max-width: 700px) {
-    .skills-list > li {
+    .skills-list>li {
         font-size: 0.8em;
     }
 
