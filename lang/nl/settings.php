@@ -18,4 +18,5 @@ return [
         'bravo' => 'Bravo',
     ],
     'photo' => 'Foto',
+    'show_photo' => 'Toon foto'
 ];

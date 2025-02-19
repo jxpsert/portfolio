@@ -51,6 +51,8 @@
                     <a href="{{ route('admin.settings.index') }}"
                         class="menu-item {{ $activeRoute }}">{{ __('Settings') }}</a>
 
+                    <a href="{{ route('admin.resume') }}" class="menu-item">{{ __('Generate resume') }}</a>
+
                     <a target="_blank" href="{{ route('home') }}" class="menu-item">{{ __('View site') }}<i
                             class="bi bi-box-arrow-up-right ms-2"></i></a>
                     <a href="{{ route('admin.logout') }}" class="menu-item">{{ __('auth.logout') }}</a>

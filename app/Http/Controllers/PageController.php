@@ -37,4 +37,14 @@ class PageController extends Controller
     {
         return view('pages.links');
     }
+
+    public function resume() {
+        $workExperiences = Experience::where('type', 'work')->orderByRaw('end IS NULL DESC')->orderBy('end', 'DESC')->get();
+        $educationExperiences = Experience::where('type', 'education')->orderByRaw('end IS NULL DESC')->orderBy('end', 'DESC')->get();
+
+        return view('pages.admin.resume', [
+            'workExperience' => $workExperiences,
+            'educationExperience' => $educationExperiences
+        ]);
+    }
 }

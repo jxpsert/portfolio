@@ -1,3 +1,7 @@
+* {
+    font-family: "Sarala", sans-serif;
+}
+
 .sidebar-menu {
     display: grid;
     grid-template-columns: auto;

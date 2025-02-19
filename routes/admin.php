@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\PageController;
 use App\Http\Middleware\IsLoggedIn;
 
 Route::group(['middleware' => ['web', IsLoggedIn::class]], function () {
@@ -32,4 +33,6 @@ Route::group(['middleware' => ['web', IsLoggedIn::class]], function () {
     Route::resource('companies', CompanyController::class)->except('show');
     Route::resource('settings', SettingController::class)->except('show');
     Route::post('settings/set', [SettingController::class, 'set'])->name('settings.set');
+
+    Route::get('resume', [PageController::class, 'resume'])->name('resume');
 });

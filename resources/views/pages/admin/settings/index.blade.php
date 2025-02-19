@@ -19,8 +19,20 @@
                         {{ __('settings.' . $setting->key) }}
                     </td>
                     <td>
-                        <input class="form-control bg-light setting" type="text" id="{{ $setting->key }}"
-                            name="{{ $setting->key }}" value="{{ $setting->value }}">
+                        @switch($setting->type)
+                            @case (\App\Enums\SettingType::Text)
+                                <input class="form-control bg-light setting" type="text" id="{{ $setting->key }}"
+                                    name="{{ $setting->key }}" value="{{ $setting->value }}">
+                            @break
+
+                            @case (\App\Enums\SettingType::Boolean)
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input boolean setting" type="checkbox" role="switch"
+                                        name="{{ $setting->key }}" id="{{ $setting->key }}"
+                                        @if ($setting->value == '1') checked @endif>
+                                </div>
+                            @break
+                        @endswitch
                     </td>
                 </tr>
             @endforeach
@@ -29,21 +41,24 @@
                     {{ __('settings.frontend_theme') }}
                 </td>
                 <td>
-                    @foreach(config('app.themes') as $value => $label)
-                    <div class="form-check">
-                        <input class="form-check-input setting" type="radio" name="frontend_theme" id="frontend_theme_{{ $value }}"
-                            value="{{ $value }}" {{ setting('frontend_theme') == $value ? 'checked' : '' }}>	
-                        <label class="form-check-label" for="frontend_theme_{{ $value }}">{{ $label }}</label>
-                    </div>
+                    @foreach (config('app.themes') as $value => $label)
+                        <div class="form-check">
+                            <input class="form-check-input setting" type="radio" name="frontend_theme"
+                                id="frontend_theme_{{ $value }}" value="{{ $value }}"
+                                {{ setting('frontend_theme') == $value ? 'checked' : '' }}>
+                            <label class="form-check-label"
+                                for="frontend_theme_{{ $value }}">{{ $label }}</label>
+                        </div>
                     @endforeach
                 </td>
-            </td>
+                </td>
             <tr>
                 <td>
                     {{ __('settings.photo') }}
                 </td>
                 <td>
-                    <input class="form-control bg-light setting" accept=".png" type="file" id="photo" name="photo">
+                    <input class="form-control bg-light setting" accept=".png" type="file" id="photo"
+                        name="photo">
                     {{ __('Current') }}: <img src="{{ asset('storage/assets/photo.png') }}" class="setting-image mt-2">
                 </td>
             </tr>
@@ -60,7 +75,13 @@
                 if (setting.name === 'frontend_theme' && !setting.checked) {
                     return acc;
                 }
-                acc[setting.name] = setting.value;
+
+                if (setting.classList.contains('boolean')) {
+                    acc[setting.name] = setting.checked ? "1" : "0";
+                } else {
+                    acc[setting.name] = setting.value;
+                }
+
                 return acc;
             }, {});
 

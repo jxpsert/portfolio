@@ -38,8 +38,10 @@
             <div id="sidebar" class="col-12 col-md-3 bg-dark text-white sticky-top h-100">
                 <div class="container pt-3">
                     <div class="text-center">
-                        <img alt="Foto van gezicht" src="{{ asset('storage/assets/photo.png') }}"
-                            class="headshot mt-4 mt-md-3">
+                        @if (setting('show_photo'))
+                            <img alt="Foto van gezicht" src="{{ asset('storage/assets/photo.png') }}"
+                                class="headshot mt-4 mt-md-3">
+                        @endif
                         <h1 class="fw-bold mt-4">{{ setting('site_name') }}</h1>
                         <span class="fs-5">{{ setting('title') }}</span>
                     </div>
@@ -112,8 +114,10 @@
                                 <h2>Werkervaring</h2>
                                 <ul id="jobsList" class="list-unstyled timeline">
                                     @foreach ($workExperiences as $experience)
-                                        @if($experience->start > \Carbon\Carbon::now()) @continue @endif
-                                        <x-experience :experience="$experience" />
+                                        @if ($experience->start > \Carbon\Carbon::now())
+                                            @continue
+                                        @endif
+                                        <x-alpha.experience :experience="$experience" />
                                     @endforeach
                                 </ul>
                             </section>
@@ -124,8 +128,10 @@
                                 <h2>Opleiding</h2>
                                 <ul id="educationList" class="list-unstyled timeline">
                                     @foreach ($educationExperiences as $experience)
-                                    @if($experience->start > \Carbon\Carbon::now()) @continue @endif
-                                        <x-experience :experience="$experience" />
+                                        @if ($experience->start > \Carbon\Carbon::now())
+                                            @continue
+                                        @endif
+                                        <x-alpha.experience :experience="$experience" />
                                     @endforeach
                                 </ul>
                             </section>
@@ -137,7 +143,7 @@
                         <div class="row row-cols-1 row-cols-md-3 g-3 ps-md-4" id="projectsContainer">
                             @foreach ($projects as $project)
                                 <div class="col">
-                                    <x-project :project="$project" />
+                                    <x-alpha.project :project="$project" />
                                 </div>
                             @endforeach
                         </div>
